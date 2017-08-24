@@ -4,7 +4,10 @@ class Navbar extends Component {
   render() {
     return (
       <nav className="navbar">
-        <a href="/" className="navbar-brand">Chatty</a>
+
+        <img id="chat" src="../images/chat.png" />
+
+        <a href="/" className="navbar-brand">Let's Chat!</a>
       </nav>
     );
   }

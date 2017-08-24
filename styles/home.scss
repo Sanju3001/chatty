@@ -14,7 +14,7 @@
     }
 
     .chatbar {
-      background: tomato;
+      background: #228b22;
       border-top: 1px solid black;
       bottom: 0;
       display: flex;
@@ -22,6 +22,7 @@
       padding: 5px;
       position: fixed;
       right: 0;
+
     }
 
     .chatbar-message,
@@ -34,6 +35,7 @@
       padding: 0 9px;
     }
 
+
     .chatbar-message {
       flex: 8;
     }
@@ -41,6 +43,8 @@
     .chatbar-username {
       flex: 2;
     }
+
+
 
     .message {
       display: flex;
@@ -66,10 +70,11 @@
     .message-username {
       flex: 2;
       font-weight: 700;
+      width: 100px;
     }
 
     .navbar {
-      background: tomato;
+      background: #228b22;
       border-bottom: 1px solid black;
       height: 60px;
       left: 0;
@@ -89,4 +94,10 @@
       line-height: 60px;
       padding: 0 10px;
       text-decoration: none;
+    }
+
+    #chat {
+      height: 60px;
+      width: 60px;
+      float: left;
     }

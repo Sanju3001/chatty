@@ -9,33 +9,41 @@ class App extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      currentUser: {name: "Anonymous"},
-      messages: [
-        {
-          username: "Bob",
-          content: "Has anyone seen my marbles?",
-        },
-        {
-          username: "Anonymous",
-          content: "No, I think you lost them. You lost your marbles Bob. You lost them for good."
-        }
-      ]
-    }
+      currentUser: {name: ""},
+      messages: []
+    };
   }
 
+
+//const socket = new WebSocket('ws://localhost:3001');
+
+
   // in App.jsx
-// componentDidMount() {
-//   console.log("componentDidMount <App />");
-//   setTimeout(() => {
-//     console.log("Simulating incoming message");
-//     // Add a new message to the list of messages in the data store
-//     const newMessage = {id: 3, username: "Michelle", content: "Hello there!"};
-//     const messages = this.state.messages.concat(newMessage)
-//     // Update the state of the app component.
-//     // Calling setState will trigger a call to render() in App and all child components.
-//     this.setState({messages: messages})
-//   }, 3000);
-// }
+componentDidMount() {
+  //const ip = '66.207.221.230';
+  this.socket = new WebSocket('ws://localhost:3001');
+  //console.log(this.socket)
+  this.socket.onopen = function(ev) {
+    console.log("Connected to server!");
+  }
+
+  // socket.onmessage = function(handleNewMessage) {
+  //   console.log(handleNewMessage);
+  //   var sendMessage = JSON.parse(handleNewMessage);
+  //   console.log(sendMessage);
+  //   //socket.send(JSON.stringify(handleNewMessage));
+  // }
+  this.socket.onmessage = (event) => {
+    console.log(event);
+    // code to handle incoming message
+    var inputMessage = JSON.parse(event.data);
+    console.log(this.state.messages);
+    const newMes = [...this.state.messages, inputMessage]
+    this.setState({messages: newMes});
+  }
+
+
+}
 
 
 
@@ -60,16 +68,6 @@ class App extends Component {
     )
   };
 
-  handleNewMessage = (textInput) => {
-    textInput.preventDefault()
-      const newMessage = {username: this.state.currentUser.name, content: textInput.target.text.value};
-      const messages = this.state.messages.concat(newMessage)
-      // Update the state of the app component.
-      // Calling setState will trigger a call to render() in App and all child components.
-      this.setState({messages: messages})
-      textInput.target.text.value = ''
-  };
-
   handleNewUser = (nameInput) => {
     nameInput.preventDefault()
     if (!nameInput.target.value) {
@@ -79,6 +77,23 @@ class App extends Component {
       this.state.currentUser.name = nameInput.target.value
     }
   };
+
+  handleNewMessage = (textInput) => {
+    textInput.preventDefault()
+      const newMessage = {username: this.state.currentUser.name, content: textInput.target.text.value};
+      const messages = this.state.messages.concat(newMessage)
+      //const socket = new WebSocket('ws://localhost:3001');
+      var sendMessage = JSON.stringify(newMessage);
+      this.socket.send(sendMessage);
+
+      // Update the state of the app component.
+      // Calling setState will trigger a call to render() in App and all child components.
+      this.setState({messages: messages})
+      //textInput.target.text.value = ''
+  };
+
+
+
 
 
 }
