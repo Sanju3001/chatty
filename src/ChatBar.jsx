@@ -12,9 +12,9 @@ class ChatBar extends Component {
 
         <input onChange={this.props.handleNewUser} className="chatbar-username" placeholder="Enter your name (optional)" name="username" />
 
-        <form onSubmit={this.props.handleNewMessage}>
+        <form onSubmit={this.props.handleNewMessage} className="chatbar-message">
 
-          <input className="chatbar-message" placeholder="Type a message and hit ENTER" name="text"/>
+          <input className="chatbar-input" placeholder="Type a message and press ENTER" name="text"/>
 
         </form>
 

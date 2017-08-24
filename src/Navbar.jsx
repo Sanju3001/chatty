@@ -7,7 +7,7 @@ class Navbar extends Component {
 
         <img id="chat" src="../images/chat.png" />
 
-        <a href="/" className="navbar-brand">Let's Chat!</a>
+        <a href="/" className="navbar-brand">Chatty!!</a>
       </nav>
     );
   }

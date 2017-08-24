@@ -1,9 +1,7 @@
 
-
     h1 {
       color: tomato;
     }
-
 
     body {
       background: white;
@@ -14,7 +12,7 @@
     }
 
     .chatbar {
-      background: #228b22;
+      background: #3BFF66;
       border-top: 1px solid black;
       bottom: 0;
       display: flex;
@@ -22,7 +20,6 @@
       padding: 5px;
       position: fixed;
       right: 0;
-
     }
 
     .chatbar-message,
@@ -32,19 +29,24 @@
       height: 40px;
       line-height: 40px;
       margin: 5px;
-      padding: 0 9px;
-    }
 
-
-    .chatbar-message {
-      flex: 8;
     }
 
     .chatbar-username {
-      flex: 2;
+      flex: 4;
+      padding: 0 9px;
     }
 
+    .chatbar-message {
+      flex: 8;
+      display: flex;
+    }
 
+    .chatbar-input {
+
+      padding: 0 9px;
+      flex-grow: 1;
+    }
 
     .message {
       display: flex;
@@ -74,7 +76,7 @@
     }
 
     .navbar {
-      background: #228b22;
+      background: #3BFF66;
       border-bottom: 1px solid black;
       height: 60px;
       left: 0;
@@ -82,14 +84,16 @@
       position: fixed;
       right: 0;
       top: 0;
+      box-shadow: 10px 10px 5px #888888;
     }
 
     .navbar-brand {
-      color: inherit;
+      font-family: 'Kaushan Script', cursive;
+      color: orange;
       display: block;
       float: left;
       font-weight: 700;
-      font-size: 28px;
+      font-size: 36px;
       height: 60px;
       line-height: 60px;
       padding: 0 10px;
