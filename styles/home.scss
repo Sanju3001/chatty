@@ -1,4 +1,4 @@
-
+// This is the scss file for components
 
     body {
       background: white;
@@ -40,7 +40,6 @@
     }
 
     .chatbar-input {
-
       padding: 0 9px;
       flex-grow: 1;
     }
@@ -48,6 +47,12 @@
     .message {
       display: flex;
       padding: 5px;
+    }
+
+    .newStyle {
+      display: flex;
+      padding: 5px;
+      font: italic bold 16px/30px Georgia, serif;
     }
 
     .message.system {
@@ -64,12 +69,14 @@
 
     .message-content {
       flex: 8;
+      font-size: 16px;
     }
 
     .message-username {
       flex: 2;
-      font-weight: 700;
+      font-weight: bold;
       width: 100px;
+      font-size: 16px;
     }
 
     .navbar {

@@ -10,7 +10,8 @@ class App extends Component {
     this.state = {
       currentUser: {name: "Anonymous"},
       messages: [],
-      userCount: 0
+      userCount: 0,
+      type: "incomingMessage"
     };
   }
 
@@ -35,15 +36,15 @@ class App extends Component {
       switch(inputMessage.type) {
         case "incomingMessage":
           // handle incoming message;
-          const newMes = [...this.state.messages, {username: inputMessage.username, content: inputMessage.content}]
-          count = inputMessage.count
+          const newMes = [...this.state.messages, {username: inputMessage.username, content: inputMessage.content, type: inputMessage.type}];
+          count = inputMessage.count;
           this.setState({messages: newMes, userCount: count});
           break;
         case "incomingNotification":
           // handle incoming notification
-          const newNot = [...this.state.messages, {username: inputMessage.username, content: inputMessage.content}]
-          count = inputMessage.count
-          this.setState({messages: newNot, userCount: count})
+          const newNot = [...this.state.messages, {username: inputMessage.username, content: inputMessage.content, type: inputMessage.type}];
+          count = inputMessage.count;
+          this.setState({messages: newNot, userCount: count});
           break;
         default:
           // show an error in the console if the message type is unknown
