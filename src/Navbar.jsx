@@ -13,7 +13,7 @@ class Navbar extends Component {
 
         <a href="/" className="navbar-brand">Chatty!!</a>
 
-        <span class="userCount">{this.props.count} users online</span>
+        <span className="userCount">{this.props.count} users online</span>
 
       </nav>
 
