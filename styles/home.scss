@@ -1,7 +1,4 @@
 
-    h1 {
-      color: tomato;
-    }
 
     body {
       background: white;
@@ -85,6 +82,7 @@
       right: 0;
       top: 0;
       box-shadow: 10px 10px 5px #888888;
+      display: flex;
     }
 
     .navbar-brand {
@@ -104,4 +102,8 @@
       height: 60px;
       width: 60px;
       float: left;
+    }
+
+    .userCount {
+      float: right;
     }

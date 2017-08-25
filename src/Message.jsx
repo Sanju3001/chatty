@@ -1,10 +1,9 @@
 import React, {Component} from 'react';
 
+// Message Component
 class Message extends Component {
 
   render () {
-
-   //console.log(this.props);
 
     return (
 

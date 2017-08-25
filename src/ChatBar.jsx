@@ -1,20 +1,19 @@
 import React, {Component} from 'react';
 
+// Chatbar component
 class ChatBar extends Component {
 
   render () {
 
-   //console.log(this.props);
-
     return (
 
-     <footer className="chatbar">
+      <footer className="chatbar">
 
-      <form onSubmit={this.props.handleNewUser} className="chatbar-username">
+        <form onSubmit={this.props.handleNewUser} className="chatbar-username">
 
-        <input className="chatbar-input" placeholder="Enter your name (optional)" name="username" />
+          <input className="chatbar-input" placeholder="Enter your name (optional)" name="username" />
 
-      </form>
+        </form>
 
         <form onSubmit={this.props.handleNewMessage} className="chatbar-message">
 

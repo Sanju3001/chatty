@@ -1,11 +1,10 @@
 import React, {Component} from 'react';
 import Message from './Message.jsx';
 
+// Message List component
 class MessageList extends Component {
 
   render () {
-
-   //console.log(this.props);
 
     return (
 
@@ -14,8 +13,7 @@ class MessageList extends Component {
       {this.props.messages.map((message, index) =>
           <Message message={message} key={index}/>
           )
-        }
-
+      }
 
       </main>
 
