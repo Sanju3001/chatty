@@ -8,9 +8,13 @@ class ChatBar extends Component {
 
     return (
 
-      <footer className="chatbar">
+     <footer className="chatbar">
 
-        <input onChange={this.props.handleNewUser} className="chatbar-username" placeholder="Enter your name (optional)" name="username" />
+      <form onSubmit={this.props.handleNewUser} className="chatbar-username">
+
+        <input className="chatbar-input" placeholder="Enter your name (optional)" name="username" />
+
+      </form>
 
         <form onSubmit={this.props.handleNewMessage} className="chatbar-message">
 
