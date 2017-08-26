@@ -118,10 +118,10 @@ class App extends Component {
           content: textInput.target.text.value
         };
 
-        const messages = this.state.messages.concat(newMessage)
-        //const socket = new WebSocket('ws://localhost:3001');
+        const messages = this.state.messages.concat(newMessage);
         var sendMessage = JSON.stringify(newMessage);
         this.socket.send(sendMessage);
+        textInput.target.text.value = '';
 
   };
 
